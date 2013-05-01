@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+/**
+* Vanilla CSS
+*/
+html {
+  background: #bebbb0;
+}
+
+/***************************************************************************************
+* BODY ELEMENTS
+***************************************************************************************/
+body {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+  color: #594F4F;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dddddd), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #dddddd, #ffffff);
+  background-image: -moz-linear-gradient(top, #dddddd, #ffffff);
+  background-image: -o-linear-gradient(top, #dddddd, #ffffff);
+  background-image: linear-gradient(top, #dddddd, #ffffff);
+  background-size: 100% 100px;
+  background-repeat: no-repeat;
+}
+
+/***************************************************************************************
+* HEADINGS
+***************************************************************************************/
+header {
+  font-size: 1.2em;
+}
+header h1 {
+  clear: left;
+  text-shadow: 0 1px 0 #fff;
+}
+
+/* All Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #111426;
+  margin: .67em .4em .5em .4em;
+}
+
+/* Individual Headings */
+/***************************************************************************************
+* PARAGRAPHS
+***************************************************************************************/
+/* First Paragraph */
+p {
+  margin: 1em;
+  text-indent: .7em;
+}
+
+/* Seccond Paragraph */
+abbr {
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+
+/* Blockquote */
+blockquote {
+  margin-left: 2em;
+  overflow: hidden;
+  border: 1px solid #594f4f;
+  border-left-width: 3em;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+blockquote:before {
+  content: '„“';
+  font-size: 4em;
+  position: absolute;
+  margin-left: -.7em;
+  color: #bebbb0;
+}
+
+/* Third Paragraph */
+dfn {
+  font-weight: bold;
+}
+
+strong {
+  color: #111426;
+}
+
+/* Quote */
+/* Fourth Paragraph */
+/***************************************************************************************
+* LISTS
+***************************************************************************************/
+/* All Lists */
+/* Definition Lists */
+/* Ordered Lists */
+/* Unordered Lists */
+/***************************************************************************************
+* FORMS
+***************************************************************************************/
+/* Inputs */
+/* Other */
+/***************************************************************************************
+* TABLES
+***************************************************************************************/
+/* Head */
+/* Body */
+/* Foot */
+/***************************************************************************************
+* OTHER
+***************************************************************************************/
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}

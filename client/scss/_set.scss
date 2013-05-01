@@ -1,0 +1,197 @@
+@import "palette";
+@import "mixins";
+
+* {
+	box-sizing: border-box;
+}
+/**
+* Vanilla CSS
+*/
+
+html {
+	background: $bg;
+}
+
+/***************************************************************************************
+* BODY ELEMENTS
+***************************************************************************************/
+
+body {
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 16px;
+	color: #594F4F;
+	@include background-image(linear-gradient(top, #ddd, #fff));
+	background-size: 100% 100px;
+	background-repeat: no-repeat;
+}
+div {}
+hr {}
+img {}
+a {}
+
+/***************************************************************************************
+* HEADINGS
+***************************************************************************************/
+
+header {
+	font-size: 1.2em;
+	h1 {
+		clear:left;
+		text-shadow: 0 1px 0 #fff;
+	}
+}
+/* All Headings */
+h1, h2, h3, h4, h5, h6 {
+	color: #111426;
+	margin: .67em .4em .5em .4em;
+}
+
+/* Individual Headings */
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+/***************************************************************************************
+* PARAGRAPHS
+***************************************************************************************/
+
+/* First Paragraph */
+p {
+	margin: 1em;
+	text-indent: .7em;
+}
+
+/* Seccond Paragraph */
+abbr {
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+}
+b {
+}
+
+/* Blockquote */
+blockquote {
+	margin-left: 2em;
+	overflow: hidden;
+	border: 1px solid $dark-brown;
+	border-left-width: 3em;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+	&:before {
+		content: '„“';
+		font-size: 4em;
+		position: absolute;
+		margin-left: -.7em;
+		color: $bg;
+	}
+}
+cite {}
+
+/* Third Paragraph */
+dfn {
+	font-weight: bold;
+}
+del {}
+em {}
+i {}
+strong {
+	color: $black;
+}
+ins {}
+small {}
+
+/* Quote */
+q {}
+
+/* Fourth Paragraph */
+sub {}
+sup {}
+
+/***************************************************************************************
+* LISTS
+***************************************************************************************/
+
+/* All Lists */
+dl, ol, ul {}
+
+/* Definition Lists */
+dl {}
+dt {}
+dd {}
+
+/* Ordered Lists */
+ol {}
+ol li {}
+
+/* Unordered Lists */
+ul {}
+ul li {}
+
+/***************************************************************************************
+* FORMS
+***************************************************************************************/
+
+form {}
+fieldset {}
+legend {}
+label {}
+
+/* Inputs */
+input {}
+textarea {}
+
+/* Other */
+select {}
+optgroup {}
+
+/***************************************************************************************
+* TABLES
+***************************************************************************************/
+
+table {}
+caption {}
+tr {}
+
+/* Head */
+thead {}
+th {}
+
+/* Body */
+tbody {}
+td {}
+
+/* Foot */
+tfoot {}
+
+/***************************************************************************************
+* OTHER
+***************************************************************************************/
+
+address {}
+code {}
+samp {}
+pre {}
+
+kbd {}
+var {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

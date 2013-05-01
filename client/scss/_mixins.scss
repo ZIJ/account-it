@@ -1,0 +1,15 @@
+@mixin width($width) {
+	@if $width == min-content {
+		width: -moz-min-content;
+		width: -webkit-min-content;
+		width: -min-content;
+	}
+	@elseif $width == max-content {
+		width: -moz-max-content;
+		width: -webkit-max-content;
+		width: -max-content;
+	}
+	@else {
+		width: $width;
+	}
+}
