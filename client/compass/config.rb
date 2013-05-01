@@ -2,7 +2,7 @@
 
 # Please read the docs http://docs.mixture.io/preprocessors#compass, we will soon support
 # the ability to easily require plugins.
-project_path = "/Users/TNK/work/account-it/client/"
+project_path = "/work/projects/account-it/client"
 
 # Important! change the paths below to match your project setup
 
