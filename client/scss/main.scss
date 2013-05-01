@@ -5,3 +5,7 @@
 @import "palette";
 @import "helpers";
 @import "mixins";
+
+body>header {
+	text-align: center;
+}

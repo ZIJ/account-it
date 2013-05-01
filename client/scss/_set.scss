@@ -20,12 +20,18 @@ body {
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 16px;
 	color: #594F4F;
-	@include background-image(linear-gradient(top, #ddd, #fff));
-	background-size: 100% 100px;
+	padding-top: 1px;	//to prevent margin-collapsing
+	@include box-shadow(inset 0 1px 6px rgba(0, 0, 0, .2));
+	@include background(linear-gradient(rgba(0, 0, 0, .1), transparent));
+	background-size: 100% 200px;
 	background-repeat: no-repeat;
 }
 div {}
-hr {}
+hr {
+	border: 0;
+	border-bottom:1px solid $brown;
+	box-shadow: 0 1px 0 0 #fff;
+}
 img {}
 a {}
 
@@ -37,13 +43,13 @@ header {
 	font-size: 1.2em;
 	h1 {
 		clear:left;
-		text-shadow: 0 1px 0 #fff;
 	}
 }
 /* All Headings */
-h1, h2, h3, h4, h5, h6 {
-	color: #111426;
+#{headings()} {
+	color: $brown;
 	margin: .67em .4em .5em .4em;
+	text-shadow: 0 1px 0 #fff;
 }
 
 /* Individual Headings */
@@ -76,14 +82,16 @@ b {
 blockquote {
 	margin-left: 2em;
 	overflow: hidden;
-	border: 1px solid $dark-brown;
-	border-left-width: 3em;
+	border: 1px solid $brown;
+	border-left-width: 4em;
+	min-height: 5em;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+	overflow: hidden;
 	&:before {
-		content: '„“';
-		font-size: 4em;
+		content: '“';
+		font-size: 8em;
 		position: absolute;
-		margin-left: -.7em;
+		margin-left: -.45em;
 		color: $bg;
 	}
 }
