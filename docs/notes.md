@@ -18,6 +18,10 @@ Sign in options:
 
 An authorized user can manage his sign-in options – add or remove social services. When user adds a social account, all rooms associated with that account are merged to user's profile. When removing an account, it does not get any rooms, even if some of them were previously associated with it.
 
+When signed in, user can see all private rooms that he created or was invited to, as well as all public rooms that he "bookmarked".
+
+TODO: "private-public" rooms - associated with the user, but publically available. It should be possible to make any pulbic room "public-private" somehow.
+
 
 
 
