@@ -1,6 +1,9 @@
 // Retrieve
 var mongoose = require('mongoose');
 var express = require('express');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 var MongoClient = require('mongodb').MongoClient;
 
 var roomSchema = mongoose.Schema({
@@ -94,4 +97,10 @@ app.del('/room/:id', function(req, res){
     });    
 });
 
-app.listen(3000);
+var ssl = {
+    key: fs.readFileSync('server-key.pem').toString(),
+    cert: fs.readFileSync('server-cert.pem').toString()
+};
+
+https.createServer(ssl, app).listen(8000);
+http.createServer(app).listen(3000);

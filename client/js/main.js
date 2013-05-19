@@ -1,6 +1,6 @@
 (function(){
 
-	var baseUrl = 'http://localhost:3000/';
+	var baseUrl = '';
 
 	var newRoom = {
 		name: 'New Room',
