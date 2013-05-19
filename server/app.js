@@ -28,6 +28,7 @@ db.once('open', function callback () {
 
 var app = express();
 app.use(express.bodyParser());
+app.use(express.static('../client'));
 
 app.get('/', function(req, res){
     res.send('Account-it');
