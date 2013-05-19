@@ -22,6 +22,8 @@ When signed in, user can see all private rooms that he created or was invited to
 
 TODO: "private-public" rooms - associated with the user, but publically available. It should be possible to make any pulbic room "public-private" somehow.
 
+A user can invite other persons to any private room that he created or was invited to. This can be done by invitation link or by email (that contains the same invitation link).
 
+An invitation link has a limited time to live and can be used only once. When another person clicks on that link, he must sign-up or sign-in. When he is authorized, a person who invited him gets an "approval message" with some info about the user who accepted invitation (username from Account-it or the service that he used to log in)
 
 
