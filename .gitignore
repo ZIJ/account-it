@@ -1,2 +1,6 @@
+.idea
 account-it.sublime-project
 account-it.sublime-workspace
+*~
+*.lock
+*.DS_Store
