@@ -24,6 +24,10 @@ TODO: "private-public" rooms - associated with the user, but publically availabl
 
 A user can invite other persons to any private room that he created or was invited to. This can be done by invitation link or by email (that contains the same invitation link).
 
-An invitation link has a limited time to live and can be used only once. When another person clicks on that link, he must sign-up or sign-in. When he is authorized, a person who invited him gets an "approval message" with some info about the user who accepted invitation (username from Account-it or the service that he used to log in). Until approval, the user who is invited can see the room that he has been invited to in "locked" state with a message about approval process.
+An invitation link has a limited time to live and can be used only once. When another person clicks on that link, he must sign-up or sign-in.
+
+When the invited user is authorized, a person who invited him gets an "approval message" with some info about the user who accepted invitation (username from Account-it or the service that he used to log in).
+
+Until approval, the user who is invited can see the room that he has been invited to in "locked" state with a message about approval process.
 
 
