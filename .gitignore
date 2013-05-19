@@ -4,3 +4,4 @@ account-it.sublime-workspace
 *~
 *.lock
 *.DS_Store
+.sass-cache

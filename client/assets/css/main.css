@@ -7,6 +7,8 @@
 */
 html {
   background: white;
+  min-height: 100%;
+  height: 100%;
 }
 
 /***************************************************************************************
@@ -27,6 +29,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.1), transparent);
   background-size: 100% 200px;
   background-repeat: no-repeat;
+  min-height: 100%;
 }
 
 hr {
