@@ -15,6 +15,6 @@
   "templateDefaultLayout": "layout",
   "templateDefaultPage": "index",
   "templateDirectory": "templates",
-  "type": "mixture",
+  "type": "simple",
   "useCompass": true
 }
