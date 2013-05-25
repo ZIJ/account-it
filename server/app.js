@@ -1,10 +1,15 @@
-// Retrieve
+
 var mongoose = require('mongoose');
 var express = require('express');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var MongoClient = require('mongodb').MongoClient;
+
+var port = process.env.PORT || 8000;
+var mongoUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/accountItDb';
+var staticDir = 'client';
+var sslKey = 'server/server-key.pem';
+var sslCert = 'server/server-cert.pem';
 
 var roomSchema = mongoose.Schema({
     name: String,
@@ -22,7 +27,7 @@ var roomSchema = mongoose.Schema({
 var Room = mongoose.model('Room', roomSchema);
 
 
-mongoose.connect('mongodb://localhost:27017/accountItDb');
+mongoose.connect(mongoUrl);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
@@ -31,7 +36,7 @@ db.once('open', function callback () {
 
 var app = express();
 app.use(express.bodyParser());
-app.use(express.static('../client'));
+app.use(express.static(staticDir));
 
 app.get('/', function(req, res){
     res.send('Account-it');
@@ -98,9 +103,10 @@ app.del('/room/:id', function(req, res){
 });
 
 var ssl = {
-    key: fs.readFileSync('server-key.pem').toString(),
-    cert: fs.readFileSync('server-cert.pem').toString()
+    key: fs.readFileSync(sslKey).toString(),
+    cert: fs.readFileSync(sslCert).toString()
 };
 
-https.createServer(ssl, app).listen(8000);
-http.createServer(app).listen(3000);
+https.createServer(ssl, app).listen(port, function() {
+    console.log("Account-it listening on " + port);
+});
