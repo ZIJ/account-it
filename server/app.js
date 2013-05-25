@@ -107,6 +107,12 @@ var ssl = {
     cert: fs.readFileSync(sslCert).toString()
 };
 
+/*
 https.createServer(ssl, app).listen(port, function() {
     console.log("Account-it listening on " + port);
+}); */
+
+http.createServer(app).listen(port, function(){
+    console.log("Account-it listening on " + port);
 });
+
