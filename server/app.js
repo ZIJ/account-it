@@ -17,7 +17,6 @@
     var sslCert = 'server/server-cert.pem';
 
 
-
     var roomSchema = mongoose.Schema({
         name: String,
         operations: [{
@@ -31,8 +30,17 @@
         }]
     });
 
+    var userSchema = mongoose.Schema({
+        //TODO add email
+        name: String,
+        password: String,
+        facebookId: String,
+        rooms: []
+    });
+
     var Room = mongoose.model('Room', roomSchema);
 
+    var User = mongoose.model('User', userSchema);
 
     mongoose.connect(mongoUrl);
     var db = mongoose.connection;
@@ -48,7 +56,7 @@
         },
         function(accessToken, refreshToken, profile, done) {
             console.log('Logged in ' + profile.displayName);
-            done(null);
+            done(null, profile.displayName);
         }
     ));
 
@@ -56,8 +64,28 @@
     app.use(express.bodyParser());
     app.use(express.static(staticDir));
 
-    app.get('/', function(req, res){
-        res.send('Account-it');
+    app.post('/signup', function(req, res){
+        User.findOne({ name: req.body.name }, function(err, user){
+            if(user){
+                res.status(422).send('Username taken');
+            } else {
+                user = new User({
+                    name: req.body.name,
+                    password: req.body.password
+                });
+                user.save(function(err, user){
+                    if (err) {
+                        res.status(500).send('Saving user failed');
+                    } else {
+                        res.send(user._id);
+                    }
+                });
+            }
+        });
+        var user = new User({
+            name: req.body.name,
+            password: req.body.password
+        })
     });
 
     app.get('/win', function(req, res){
@@ -79,7 +107,7 @@
     app.get('/roomIds', function(req, res){
         console.log('all rooms requested');
         Room.find().select('_id').exec(function(err, selection){
-            if (err) {
+            if (err, user) {
                 res.send(500);
             } else {
                 res.send(selection.map(function(obj){

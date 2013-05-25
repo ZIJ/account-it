@@ -31,7 +31,22 @@
 		}]
 	};
 
+
+
 	this.api = {
+        signup: function(name, password){
+            $.ajax({
+                url: baseUrl + 'signup',
+                method: 'POST',
+                data: {
+                    name: name,
+                    password: password
+                }
+            }).always(function(response){
+                console.log(response);
+            });
+        },
+
 		root: function(){
 			$.ajax({
 				url: baseUrl,
@@ -44,7 +59,7 @@
 		all: function(){
 			$.ajax({
 				url: baseUrl + 'roomIds',
-				method: 'GET',
+				method: 'GET'
 			}).done(function(response){
 				console.log(response);
 			});
