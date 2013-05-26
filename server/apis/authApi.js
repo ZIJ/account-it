@@ -2,8 +2,15 @@
 
     var passport = require('passport');
     var FacebookStrategy = require('passport-facebook').Strategy;
+    var SendGrid = require('sendgrid').SendGrid;
+    var uuid = require('node-uuid');
     var User = require('./../models/user');
     var config = require('./../config');
+
+    var sendgrid = new SendGrid(
+        process.env.SENDGRID_USERNAME,
+        process.env.SENDGRID_PASSWORD
+    );
 
     passport.use(new FacebookStrategy({
             clientID: config.facebook.appId,
@@ -41,12 +48,20 @@
                 } else {
                     user = new User({
                         name: req.body.name,
-                        password: req.body.password
+                        email: req.body.email,
+                        password: req.body.password,
+                        status: 'unconfirmed'
                     });
                     user.save(function(err, user){
                         if (err) {
                             res.status(500).send('Saving user failed');
                         } else {
+                            sendgrid.send({
+                                to: user.email,
+                                from: 'profile@account-it.com',
+                                subject: 'Account confirmation',
+                                text: user._id
+                            });
                             res.send(user._id);
                         }
                     });

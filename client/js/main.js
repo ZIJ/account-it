@@ -32,9 +32,8 @@
 	};
 
 
-
 	this.api = {
-        signup: function(name, password){
+        signup: function(name, email, password){
             $.ajax({
                 url: baseUrl + 'signup',
                 method: 'POST',
