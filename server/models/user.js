@@ -3,6 +3,8 @@
 
     var roomSchema = mongoose.Schema({
         name: String,
+        email: String,
+        password: String,
         confirmationId: String,
         confirmed: Boolean,
         operations: [{
