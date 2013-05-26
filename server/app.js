@@ -26,9 +26,9 @@
     /* Passport */
 
     passport.use(new FacebookStrategy({
-            clientID: 283370531799932,
-            clientSecret: 'fa0370d332815cbc3dbb422df198beaf',
-            callbackURL: "http://account-it.herokuapp.com/auth/facebook/callback"
+            clientID: config.facebook.appId,
+            clientSecret: config.facebook.secret,
+            callbackURL: config.publicUrl + config.facebook.callbackRoute
         },
         function(accessToken, refreshToken, profile, done) {
             console.log('Logged in ' + profile.displayName);
@@ -84,7 +84,7 @@
 
     app.get('/auth/facebook', passport.authenticate('facebook'));
 
-    app.get('/auth/facebook/callback',
+    app.get(config.facebook.callbackRoute,
         passport.authenticate('facebook', {
             successRedirect: '/win',
             failureRedirect: '/fail'
