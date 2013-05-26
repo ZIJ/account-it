@@ -61,6 +61,10 @@
                                 from: 'profile@account-it.com',
                                 subject: 'Account confirmation',
                                 text: user._id
+                            }, function(success, message) {
+                                if (!success) {
+                                    console.log(message);
+                                }
                             });
                             res.send(user._id);
                         }
