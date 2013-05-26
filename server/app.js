@@ -10,44 +10,20 @@
     var passport = require('passport');
     var FacebookStrategy = require('passport-facebook').Strategy;
 
-    var port = process.env.PORT || 8000;
-    var mongoUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/accountItDb';
-    var staticDir = 'client';
-    var sslKey = 'server/server-key.pem';
-    var sslCert = 'server/server-cert.pem';
+    var config = require('./config');
 
+    var Room = require('./room');
+    var User = require('./user');
 
-    var roomSchema = mongoose.Schema({
-        name: String,
-        operations: [{
-            name: String,
-            amount: Number,
-            contributions: [{
-                person: String,
-                paidAmount: Number,
-                ownsAmount: Number
-            }]
-        }]
-    });
-
-    var userSchema = mongoose.Schema({
-        //TODO add email
-        name: String,
-        password: String,
-        facebookId: String,
-        rooms: []
-    });
-
-    var Room = mongoose.model('Room', roomSchema);
-
-    var User = mongoose.model('User', userSchema);
-
-    mongoose.connect(mongoUrl);
+    mongoose.connect(config.mongoUrl);
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function callback () {
         console.log('success');
     });
+
+
+    /* Passport */
 
     passport.use(new FacebookStrategy({
             clientID: 283370531799932,
@@ -60,9 +36,16 @@
         }
     ));
 
+
+    /* Application */
+
     var app = express();
+
     app.use(express.bodyParser());
-    app.use(express.static(staticDir));
+    app.use(express.cookieParser());
+    app.use(express.session({ secret: 'greygoose' }));
+    app.use(express.static(config.staticDir));
+
 
     app.post('/signup', function(req, res){
         User.findOne({ name: req.body.name }, function(err, user){
@@ -87,6 +70,9 @@
             password: req.body.password
         })
     });
+
+
+    /* Routing */
 
     app.get('/win', function(req, res){
         res.send('Login success');
@@ -164,19 +150,11 @@
         });
     });
 
-    var ssl = {
-        key: fs.readFileSync(sslKey).toString(),
-        cert: fs.readFileSync(sslCert).toString()
-    };
 
-    /*
-     https.createServer(ssl, app).listen(port, function() {
-     console.log("Account-it listening on " + port);
-     });*/
+    /* Startup */
 
-
-    http.createServer(app).listen(port, function(){
-        console.log("Account-it listening on " + port);
+    http.createServer(app).listen(config.port, function(){
+        console.log("Account-it listening on " + config.port);
     });
 
 }());
