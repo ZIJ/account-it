@@ -1,0 +1,4 @@
+<p>Please confirm your Account-it signup by visiting this link:</p>
+<p>
+    <a href="{{=it.url}}">{{=it.url}}</a>
+</p>

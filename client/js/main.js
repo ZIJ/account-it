@@ -39,6 +39,7 @@
                 method: 'POST',
                 data: {
                     name: name,
+                    email: email,
                     password: password
                 }
             }).always(function(response){

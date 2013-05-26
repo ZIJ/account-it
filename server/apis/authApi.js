@@ -4,6 +4,9 @@
     var FacebookStrategy = require('passport-facebook').Strategy;
     var SendGrid = require('sendgrid').SendGrid;
     var uuid = require('node-uuid');
+    var dot = require('dot');
+    var fs = require('fs');
+
     var User = require('./../models/user');
     var config = require('./../config');
 
@@ -11,6 +14,8 @@
         process.env.SENDGRID_USERNAME,
         process.env.SENDGRID_PASSWORD
     );
+
+    var emailTemplate = dot.template(fs.readFileSync('server/templates/email.dot'));
 
     passport.use(new FacebookStrategy({
             clientID: config.facebook.appId,
@@ -50,7 +55,8 @@
                         name: req.body.name,
                         email: req.body.email,
                         password: req.body.password,
-                        status: 'unconfirmed'
+                        confirmationId: uuid.v4(),
+                        confirmed: false
                     });
                     user.save(function(err, user){
                         if (err) {
@@ -60,7 +66,9 @@
                                 to: user.email,
                                 from: 'profile@account-it.com',
                                 subject: 'Account confirmation',
-                                text: user._id
+                                text: emailTemplate({
+                                    url: config.publicUrl + '/confirm/' + user.confirmationId
+                                })
                             }, function(success, message) {
                                 if (!success) {
                                     console.log(message);
@@ -75,6 +83,24 @@
                 name: req.body.name,
                 password: req.body.password
             })
+        });
+
+        app.get('/confirm/:uuid',function(req, res){
+            User.findOne({ confirmationId: req.params.uuid }, function(err, user){
+                if(user){
+                    user.confirmationId = '';
+                    user.confirmed = true;
+                    user.save(function(err, user){
+                        if (err) {
+                            res.status(500).send('Cannot save user');
+                        } else {
+                            res.send('User confirmed');
+                        }
+                    })
+                } else {
+                    res.status(410).send('Link expired');
+                }
+            });
         });
 
 

@@ -3,6 +3,8 @@
 
     var roomSchema = mongoose.Schema({
         name: String,
+        confirmationId: String,
+        confirmed: Boolean,
         operations: [{
             name: String,
             amount: Number,
