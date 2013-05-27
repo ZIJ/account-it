@@ -1,97 +1,48 @@
-// Retrieve
-var mongoose = require('mongoose');
-var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
+(function(){
 
-var roomSchema = mongoose.Schema({
-    name: String,
-    operations: [{
-        name: String,
-        amount: Number,
-        contributions: [{
-            person: String,
-            paidAmount: Number,
-            ownsAmount: Number
-        }]
-    }]
-});
+    'use strict';
 
-var Room = mongoose.model('Room', roomSchema);
+    /* Third-party dependencies */
+
+    var mongoose = require('mongoose');
+    var express = require('express');
+    var http = require('http');
+
+    /* In-project dependencies */
+
+    var config = require('./config');
 
 
-mongoose.connect('mongodb://localhost:27017/accountItDb');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-  console.log('success');
-});
+    /* Persistance */
 
-var app = express();
-app.use(express.bodyParser());
-app.use(express.static('../client'));
-
-app.get('/', function(req, res){
-    res.send('Account-it');
-});
-
-app.get('/roomIds', function(req, res){
-    console.log('all rooms requested');
-    Room.find().select('_id').exec(function(err, selection){
-        if (err) {
-            res.send(500);
-        } else {
-            res.send(selection.map(function(obj){
-                return obj._id;    
-            }));
-        }
+    mongoose.connect(config.mongoUrl);
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function callback () {
+        console.log('success');
     });
-});
 
-app.get('/room/:id', function(req, res){
-    Room.findById(req.params.id, function(err, room){
-        if (err){
-            res.send(404);
-        } else {
-            res.send(room);
-        }
+
+    /* App stack initialization */
+
+    var app = express();
+
+    app.use(express.bodyParser());
+    app.use(express.cookieParser());
+    app.use(express.session({ secret: 'greygoose' }));  //TODO move secret to config
+    app.use(express.static(config.staticDir));
+
+
+    /* API endpoints */
+
+    require('./apis/roomApi')(app);
+    require('./apis/authApi')(app);
+
+
+    /* Server startup */
+
+    http.createServer(app).listen(config.port, function(){
+        console.log("Account-it 2.0 listening on " + config.port);
     });
-});
 
-app.post('/room/:id', function(req, res){
-    Room.findByIdAndUpdate(req.params.id, req.body, function(err, room){
-        if (err){
-            res.send(500);
-        } else {
-            res.send(room);
-        }
-    });
-});
-
-app.put('/room', function(req, res){
-    var room = new Room(req.body);
-    room.save(function(err){
-        if (err) {
-            res.send(500);
-        } else {
-            res.send(room);
-        }
-    });
-});
-
-app.del('/room/:id', function(req, res){
-    Room.findById(req.params.id, function(err, room){
-        if (err){
-            res.send(500);
-        } else {
-            room.remove(function(err, room){
-                if (err) {
-                    res.send(500);
-                } else {
-                    res.send();
-                }
-            });
-        }
-    });    
-});
-
-app.listen(3000);
+}());

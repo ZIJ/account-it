@@ -1,6 +1,6 @@
 (function(){
 
-	var baseUrl = 'http://localhost:3000/';
+	var baseUrl = '';
 
 	var newRoom = {
 		name: 'New Room',
@@ -31,7 +31,22 @@
 		}]
 	};
 
+
 	this.api = {
+        signup: function(name, email, password){
+            $.ajax({
+                url: baseUrl + 'signup',
+                method: 'POST',
+                data: {
+                    name: name,
+                    email: email,
+                    password: password
+                }
+            }).always(function(response){
+                console.log(response);
+            });
+        },
+
 		root: function(){
 			$.ajax({
 				url: baseUrl,
@@ -44,7 +59,7 @@
 		all: function(){
 			$.ajax({
 				url: baseUrl + 'roomIds',
-				method: 'GET',
+				method: 'GET'
 			}).done(function(response){
 				console.log(response);
 			});
