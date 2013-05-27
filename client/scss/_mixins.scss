@@ -13,3 +13,12 @@
 		width: $width;
 	}
 }
+
+@mixin link-button {
+	background: transparent;
+	border: 0;
+	text-align: left;
+	&:hover {
+		color: lighten($brown, 20%);
+	}
+}

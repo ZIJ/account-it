@@ -21,7 +21,7 @@ html {
 body {
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 16px;
-	color: #594F4F;
+	color: $black;
 	padding-top: 1px;	//to prevent margin-collapsing
 	@include box-shadow(inset 0 1px 6px rgba(0, 0, 0, .2));
 	@include background(linear-gradient(rgba(0, 0, 0, .1), transparent));
@@ -161,17 +161,43 @@ optgroup {}
 * TABLES
 ***************************************************************************************/
 
-table {}
+table {
+	width: 96%;
+	margin: 1em 2%;
+	background: #ffd;
+	@include border-radius(.2em);
+	border: 1px solid transparentize($brown, .9);
+	color: $black;
+	border-collapse: separate;
+	border-spacing: .5em;
+}
+table .select-all {
+	width: 1px;
+}
 caption {}
 tr {}
 
 /* Head */
-thead {}
-th {}
+thead {
+}
+th {
+	text-align: left;
+	font-style: italic;
+	color: $brown;
+	border-bottom: 1px solid $brown;
+}
 
 /* Body */
 tbody {}
-td {}
+td {
+	border-bottom: 1px dotted lighten($brown, 20%);
+}
+table .expandable.expanded td {
+	border: 0;
+}
+table .expanded-content {
+	background: rgba(0, 0, 0, .1);
+}
 
 /* Foot */
 tfoot {}

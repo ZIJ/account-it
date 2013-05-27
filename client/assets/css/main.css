@@ -17,7 +17,7 @@ html {
 body {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
-  color: #594F4F;
+  color: #111426;
   padding-top: 1px;
   -webkit-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.2);
@@ -115,8 +115,46 @@ strong {
 /***************************************************************************************
 * TABLES
 ***************************************************************************************/
+table {
+  width: 96%;
+  margin: 1em 2%;
+  background: #ffd;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+  border: 1px solid rgba(51, 0, 0, 0.1);
+  color: #111426;
+  border-collapse: separate;
+  border-spacing: .5em;
+}
+
+table .select-all {
+  width: 1px;
+}
+
 /* Head */
+th {
+  text-align: left;
+  font-style: italic;
+  color: #330000;
+  border-bottom: 1px solid #330000;
+}
+
 /* Body */
+td {
+  border-bottom: 1px dotted #990000;
+}
+
+table .expandable.expanded td {
+  border: 0;
+}
+
+table .expanded-content {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /* Foot */
 /***************************************************************************************
 * OTHER
@@ -131,6 +169,250 @@ strong {
   clear: both;
 }
 
-body > header {
+.actions {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  font-size: .7em;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+.actions ul {
+  font-size: .8rem;
+  margin: -2px 0 0 0;
+  padding: .3em .6em;
+  position: absolute;
+  z-index: 100;
+  display: none;
+  list-style: none;
+  border: 1px solid #111426;
+  -webkit-border-radius: 0 0.5em 0.5em 0.5em;
+  -moz-border-radius: 0 0.5em 0.5em 0.5em;
+  -ms-border-radius: 0 0.5em 0.5em 0.5em;
+  -o-border-radius: 0 0.5em 0.5em 0.5em;
+  border-radius: 0 0.5em 0.5em 0.5em;
+  background: #ffffdd;
+}
+.actions ul li {
+  border-top: 1px solid #330000;
+  padding: .2em 0;
+}
+.actions ul li:first-child {
+  border-top: 0;
+}
+.actions i:hover + ul,
+.actions ul:hover {
+  display: block;
+}
+.actions .action {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  color: #330000;
+  white-space: nowrap;
+}
+.actions .action:hover {
+  color: #990000;
+}
+.actions .action:hover {
+  color: #990000;
+}
+
+.room {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.room .header {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
   text-align: center;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  padding: 1px 0;
+  height: auto;
+}
+.room .header h1:hover .actions {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+.room .header .actions {
+  display: none;
+  position: absolute;
+  margin: .3em 0 0 .2em;
+}
+.room main {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.room .users h1,
+.room .operations h1 {
+  text-align: center;
+  font-size: 1.2em;
+}
+.room .users {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0 1em;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+.room .users .add {
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+.room .users .add:hover {
+  color: #990000;
+}
+.room .users .add i {
+  margin-right: .2em;
+}
+.room .users > ul {
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+  border-bottom: 1px solid #111426;
+}
+.room .users > ul > li {
+  clear: right;
+  white-space: nowrap;
+  margin: .5em 0;
+}
+.room .users > ul > li:hover .actions {
+  visibility: visible;
+}
+.room .users .actions {
+  visibility: hidden;
+  font-size: 1em;
+  vertical-align: baseline;
+}
+.room .users .editing {
+  padding: .3em;
+  margin-left: .8em;
+  background: #ffffdd;
+  border: 1px solid rgba(51, 0, 0, 0.1);
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+.room .users .editing form {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+.room .users .editing input[type=text] {
+  width: 10em;
+}
+.room .users .editing .balance {
+  display: none;
+}
+.room .users .editing .confirm-controls {
+  text-align: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.room .users .editing .confirm-controls li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+.room .users .editing .confirm-controls button {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding: 0;
+}
+.room .users .editing .confirm-controls button:hover {
+  color: #990000;
+}
+.room .operations {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.room .operations .operation-actions {
+  margin: 0 0 0 2%;
+  padding: 0;
+  list-style: none;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background: #eee;
+}
+.room .operations .operation-actions li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+.room .operations .operation-actions button {
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+.room .operations .operation-actions button:hover {
+  color: #990000;
+}
+
+.balance.negative {
+  color: #e40913;
 }

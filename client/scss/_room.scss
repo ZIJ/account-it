@@ -1,0 +1,151 @@
+@import "palette";
+
+.room {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	.header {
+		-webkit-box-flex: 0;
+		-moz-box-flex: 0;
+		-webkit-flex: 0 1 auto;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		text-align: center;
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
+		padding: 1px 0;
+		height: auto;
+		h1:hover .actions {
+			@include inline-block;
+		}
+		.actions {
+			display: none;
+			position: absolute;
+		margin: .3em 0 0 .2em;
+		}
+	}
+	main {
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-webkit-flex: 1 1 auto;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-direction: normal;
+		-moz-box-direction: normal;
+		-webkit-box-orient: horizontal;
+		-moz-box-orient: horizontal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+	}
+	.users,
+	.operations {
+		h1 {
+			text-align: center;
+			font-size: 1.2em;
+		}
+	}
+	.users {
+		-webkit-box-flex: 0;
+		-moz-box-flex: 0;
+		-webkit-flex: 0 1 auto;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		padding: 0 1em;
+		box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .2);
+		.add {
+			@include link-button;
+			i {
+				margin-right: .2em;
+			}
+		}
+		>ul {
+			list-style: none;
+			margin: 0 0 1em 0;
+			padding: 0;
+			border-bottom: 1px solid $black;
+			>li {
+				clear: right;
+				white-space: nowrap;
+				margin: .5em 0;
+				&:hover .actions {
+					visibility: visible;
+				}
+			}
+		}
+		.actions {
+			visibility: hidden;
+			font-size: 1em;
+			vertical-align: baseline;
+		}
+		.editing {
+			padding: .3em;
+			margin-left: .8em;
+			background: $yellow;
+			border: 1px solid transparentize($brown, .9);
+			@include border-radius(.2em);
+			form {
+				@include inline-block;
+			}
+			input[type=text] {
+				width: 10em;
+			}
+			.balance {
+				display: none;
+			}
+			.confirm-controls {
+				text-align: right;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					@include inline-block;
+				}
+				button {
+					@include link-button;
+					padding: 0;
+				}
+			}
+		}
+	}
+	.operations {
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-webkit-flex: 1 1 auto;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		.operation-actions {
+			margin: 0 0 0 2%;
+			padding: 0;
+			list-style: none;
+			@include inline-block;
+			background: #eee;
+			li {
+				@include inline-block;
+			}
+			button {
+				@include link-button;
+			}
+		}
+	}
+}

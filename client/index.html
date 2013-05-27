@@ -9,16 +9,99 @@
 		<title>Account-it v2</title>
 		<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
 		<link rel="stylesheet" href="assets/css/normalize.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
-	<body>
+	<body class="room">
 		<!--[if lt IE 7]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-		<header>
-			<h1>Account-it v2</h1>
-			<h2>Collaborative finaniсal tool</h2>
+		<header class="header">
+			<h1>
+				room „Bukovel“
+				<div class="actions">
+					<i class="icon-cog"></i>
+					<ul>
+						<li><button class="action"><i class="icon-edit pull-left"></i>rename</button></li>
+						<li><button class="action"><i class="icon-trash pull-left"></i>delete</button></li>
+						<li><button class="action"><i class="icon-save pull-left"></i>save</button></li>
+						<li><button class="action"><i class="icon-magnet pull-left"></i>invite</button></li>
+					</ul>
+				</div>
+			</h1>
+			<h2>ballance: $210</h2>
 		</header>
+		<main>
+			<section class="users">
+				<h1>Participants</h1>
+				<ul>
+					<li>
+						<div class="actions">
+							<i class="icon-cog"></i>
+							<ul>
+								<li><button class="action"><i class="icon-edit pull-left"></i>rename</button></li>
+								<li><button class="action"><i class="icon-trash pull-left"></i>delete</button></li>
+							</ul>
+						</div>
+						Igor Zalutsky <sup class="balance">$235.48</sup>
+					</li>
+					<li class="editing">
+						<form action="">
+							<input type="text" placeholder="Ivan Borushko"> <sup class="balance negative">-$483.48</sup>
+							<ul class="confirm-controls">
+								<li><button type="button" title="Cancel"><i class="icon-remove-circle"></i></button></li>
+								<li><button type="submit" title="Save"><i class="icon-ok-circle"></i></button></li>
+							</ul>
+						</form>
+					</li>
+					<li>
+						<div class="actions">
+							<i class="icon-cog"></i>
+							<ul>
+								<li><button class="action"><i class="icon-edit pull-left"></i>rename</button></li>
+								<li><button class="action"><i class="icon-trash pull-left"></i>delete</button></li>
+							</ul>
+						</div>
+						Paul Kozlovitch <sup class="balance">$0</sup>
+					</li>
+				</ul>
+				<button class="action add"><i class="icon-plus-sign"></i> Add user</button>
+			</section>
+			<section class="operations">
+				<h1>Operations</h1>
+				<ul class="operation-actions">
+					<li><button><i class="icon-plus pull-left"></i></button></li>
+					<li><button><i class="icon-trash pull-left"></i></button></li>
+				</ul>
+				<table>
+					<thead>
+						<tr>
+							<th class="select-all"><input type="checkbox" title="Select all"></th>
+							<th>Date</th>
+							<th>Operation</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="expandable expanded">
+							<td><input type="checkbox" title="Select operation"></td>
+							<td>20.05.2012</td>
+							<td>Restaurant</td>
+							<td>$500</td>
+						</tr>
+						<tr class="expanded-content">
+							<td colspan="4">asd</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" title="Select operation"></td>
+							<td>20.05.2012</td>
+							<td>Restaurant</td>
+							<td>$500</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
 		<script src="js/app.js"></script>
 		<script src="assets/scripts/jquery-1.9.1.min.js"></script>
 	</body>

@@ -5,7 +5,10 @@
 @import "palette";
 @import "helpers";
 @import "mixins";
+@import "actions";
+@import "room";
 
-body>header {
-	text-align: center;
+
+.balance.negative {
+	color: $red;
 }

@@ -1,0 +1,35 @@
+.actions {
+	@include inline-block;
+	font-size: .7em;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	ul {
+		font-size: .8rem;
+		margin: -2px 0 0 0;
+		padding: .3em .6em;
+		position: absolute;
+		z-index: 100;
+		display: none;
+		list-style: none;
+		border: 1px solid $black;
+		@include border-radius(0 .5em .5em .5em);
+		background: $yellow;
+		li {
+			border-top: 1px solid $brown;
+			padding: .2em 0;
+			&:first-child {
+				border-top: 0;
+			}
+		}
+	}
+	i:hover+ul,
+	ul:hover {
+		display: block;
+	}
+	.action {
+		@include link-button;
+		@include link-colors($brown, lighten($brown, 20%));
+		white-space: nowrap;
+	}
+}
