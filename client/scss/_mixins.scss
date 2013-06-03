@@ -18,7 +18,8 @@
 	background: transparent;
 	border: 0;
 	text-align: left;
-	&:hover {
+	&:hover,
+	&:active {
 		color: lighten($brown, 20%);
 	}
 }

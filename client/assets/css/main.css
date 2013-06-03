@@ -215,7 +215,7 @@ table .expanded-content {
   color: #330000;
   white-space: nowrap;
 }
-.actions .action:hover {
+.actions .action:hover, .actions .action:active {
   color: #990000;
 }
 .actions .action:hover {
@@ -304,7 +304,7 @@ table .expanded-content {
   border: 0;
   text-align: left;
 }
-.room .users .add:hover {
+.room .users .add:hover, .room .users .add:active {
   color: #990000;
 }
 .room .users .add i {
@@ -374,7 +374,7 @@ table .expanded-content {
   text-align: left;
   padding: 0;
 }
-.room .users .editing .confirm-controls button:hover {
+.room .users .editing .confirm-controls button:hover, .room .users .editing .confirm-controls button:active {
   color: #990000;
 }
 .room .operations {
@@ -394,9 +394,8 @@ table .expanded-content {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  background: #eee;
 }
-.room .operations .operation-actions li {
+.room .operations .operation-actions > li {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -404,13 +403,63 @@ table .expanded-content {
   zoom: 1;
   *display: inline;
 }
+.room .operations .operation-actions > li:first-child button {
+  -webkit-border-radius: 0.2em 0 0 0.2em;
+  -moz-border-radius: 0.2em 0 0 0.2em;
+  -ms-border-radius: 0.2em 0 0 0.2em;
+  -o-border-radius: 0.2em 0 0 0.2em;
+  border-radius: 0.2em 0 0 0.2em;
+  border-left-width: 1px;
+}
+.room .operations .operation-actions > li:last-child button {
+  -webkit-border-radius: 0 0.2em 0.2em 0;
+  -moz-border-radius: 0 0.2em 0.2em 0;
+  -ms-border-radius: 0 0.2em 0.2em 0;
+  -o-border-radius: 0 0.2em 0.2em 0;
+  border-radius: 0 0.2em 0.2em 0;
+}
 .room .operations .operation-actions button {
   background: transparent;
   border: 0;
   text-align: left;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(230, 230, 230, 0.1)), color-stop(100%, rgba(230, 230, 230, 0.15)));
+  background: -webkit-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: -moz-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: -o-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  text-align: center;
+  border: 1px solid rgba(51, 0, 0, 0.2);
+  border-left-width: 0;
+  padding: .3em .8em;
+  font-size: 1em;
+}
+.room .operations .operation-actions button:hover, .room .operations .operation-actions button:active {
+  color: #990000;
 }
 .room .operations .operation-actions button:hover {
-  color: #990000;
+  background: rgba(255, 255, 255, 0.1);
+}
+.room .operations .operation-actions button:active {
+  -webkit-box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: .4em .8em .2em .8em;
+}
+.room .operations .operation-actions button:disabled, .room .operations .operation-actions button:disabled:hover, .room .operations .operation-actions button:disabled:active {
+  color: #cccccc;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(230, 230, 230, 0.1)), color-stop(100%, rgba(230, 230, 230, 0.15)));
+  background: -webkit-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: -moz-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: -o-linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  background: linear-gradient(rgba(230, 230, 230, 0.1), rgba(230, 230, 230, 0.15));
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: .3em .8em;
+  cursor: not-allowed;
+}
+.room .operations .operation-actions button i {
+  margin: 0;
 }
 
 .balance.negative {
