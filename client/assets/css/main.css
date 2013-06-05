@@ -169,6 +169,10 @@ table .expanded-content {
   clear: both;
 }
 
+.hidden {
+  display: none;
+}
+
 .actions {
   display: -moz-inline-stack;
   display: inline-block;
