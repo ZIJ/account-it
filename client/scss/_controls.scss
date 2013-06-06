@@ -1,0 +1,21 @@
+@import "compass";
+@import "mixins";
+@import "palette";
+
+button {
+	@include link-button;
+}
+
+.confirm-controls {
+	text-align: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		@include inline-block;
+	}
+	button {
+		@include link-button;
+		padding: 0;
+	}
+}

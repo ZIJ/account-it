@@ -164,9 +164,6 @@ optgroup {}
 table {
 	width: 96%;
 	margin: 1em 2%;
-	background: #ffd;
-	@include border-radius(.2em);
-	border: 1px solid transparentize($brown, .9);
 	color: $black;
 	border-collapse: separate;
 	border-spacing: .5em;
@@ -180,17 +177,21 @@ tr {}
 /* Head */
 thead {
 }
+
+thead .number {
+	white-space: nowrap;
+	width: 1px;
+}
 th {
 	text-align: left;
 	font-style: italic;
-	color: $brown;
-	border-bottom: 1px solid $brown;
+	border-bottom: 1px solid transparentize($brown, .6);
 }
 
 /* Body */
 tbody {}
 td {
-	border-bottom: 1px dotted lighten($brown, 20%);
+	border-bottom: 1px dotted transparentize($brown, .4);
 }
 table .expandable.expanded td {
 	border: 0;

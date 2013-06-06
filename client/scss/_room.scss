@@ -16,6 +16,7 @@
 	-webkit-flex-wrap: nowrap;
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
+	width: 100%;
 	.header {
 		-webkit-box-flex: 0;
 		-moz-box-flex: 0;
@@ -58,19 +59,23 @@
 		-ms-flex-wrap: nowrap;
 		flex-wrap: nowrap;
 	}
-	.users,
+	.fresh-message {
+		font-style: italic;
+	}
+	.participants,
 	.operations {
 		h1 {
 			text-align: center;
-			font-size: 1.2em;
+			font-size: 1.4em;
 		}
 	}
-	.users {
+	.participants {
 		-webkit-box-flex: 0;
 		-moz-box-flex: 0;
 		-webkit-flex: 0 1 auto;
 		-ms-flex: 0 1 auto;
 		flex: 0 1 auto;
+		min-width: 15%;
 		padding: 0 1em;
 		box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .2);
 		.add {
@@ -104,27 +109,17 @@
 			background: $yellow;
 			border: 1px solid transparentize($brown, .9);
 			@include border-radius(.2em);
-			form {
-				@include inline-block;
-			}
 			input[type=text] {
-				width: 10em;
+				width: 100%;
 			}
 			.balance {
 				display: none;
 			}
-			.confirm-controls {
-				text-align: right;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				li {
-					@include inline-block;
-				}
-				button {
-					@include link-button;
-					padding: 0;
-				}
+		}
+
+		&.fresh {
+			.fresh-message {
+				max-width: 15em;
 			}
 		}
 	}
@@ -134,9 +129,10 @@
 		-webkit-flex: 1 1 auto;
 		-ms-flex: 1 1 auto;
 		flex: 1 1 auto;
+		padding: 0 2em;
 		.operation-actions {
-			margin: 0 0 0 2%;
 			padding: 0;
+			margin: 1em 0;
 			list-style: none;
 			@include inline-block;
 			>li {
@@ -157,7 +153,8 @@
 				border-left-width: 0;
 				padding: .3em .8em;
 				font-size: 1em;
-				&:hover {
+				&:hover,
+				&:active {
 					background: rgba(255, 255, 255, .1);
 				}
 				&:active {
@@ -178,5 +175,91 @@
 				}
 			}
 		}
+		.fresh-message {
+			margin: 3em 0 5em 0;
+		}
+		.add.fresh {
+			font-size: 1.5em;
+			display: block;
+			margin: 1em auto;
+			border: 1px solid darken($green, 30%);
+			@include border-radius(.3em);
+			padding: 1em;
+			@include background(linear-gradient(lighten($green, 10%), darken($green, 10%)));
+			@include box-shadow(0 2px 6px 0 rgba(0, 0, 0, .5));
+			color: $bg;
+			&:hover {
+				@include background(linear-gradient(lighten($green, 5%), darken($green, 5%)));
+			}
+			&:active {
+				@include background($green);
+				@include box-shadow(none);
+			}
+		}
+		.operations-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				@include inline-block;
+				vertical-align: top;
+				font-size: 1rem;
+			}
+			.operation {
+				@include inline-block;
+				margin: 1em;
+				width: 28em;
+				min-height: 20em;
+				background: #ffd;
+				overflow: hidden;
+				border: 1px solid transparentize($brown, .8);
+				@include border-radius(.3em);
+				padding: 1em;
+				&.editing h1 {
+					margin-top: 0;
+				}
+				h1 {
+					border-bottom: 1px solid #330000;
+					input[type=text] {
+						margin-bottom: .5em;
+					}
+				}
+				.edit {
+					position: absolute;
+					display: none;
+				}
+				time {
+					display: block;
+					text-align: right;
+					padding-right: .5em;
+				}
+				input[type=date] {
+					float: right;
+					margin: 0 .5em .5em 0;
+				}
+				input[type=number] {
+					width: 4em;
+				}
+				>input[type=checkbox] {
+					position: absolute;
+					display: none;
+				}
+				>input[type=checkbox]:checked {
+					display: block;
+				}
+				&:hover .edit {
+					@include inline-block;
+				}
+				&:hover>input[type=checkbox], {
+					display: block;
+				}
+				.confirm-controls li {
+					font-size: 1.2em;
+				}
+				.remove {
+					margin-left: -1.5em;
+				}
+			}
+		}	
 	}
 }
