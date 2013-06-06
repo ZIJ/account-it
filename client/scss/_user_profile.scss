@@ -1,0 +1,37 @@
+@import "palette";
+
+body.user-profile {
+	>h1 {
+		text-align: center;
+	}
+	.changables {
+		max-width: 980px;
+		margin: 0 auto;
+	}
+	.credentials {
+		overflow: hidden;
+		dt,
+		dd {
+			float: left;
+			margin-top: 1em;
+		}
+		dt {
+			clear: left;
+			width: 10em;
+		}
+	}
+	.social-auth {
+		list-style: none;
+		.provider {
+			@include inline-block;
+			width: 1em;
+		}
+		.username {
+			@include inline-block;
+			min-width: 10em;
+		}
+		+.add {
+			margin-left: 2em;
+		}
+	}
+}

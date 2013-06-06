@@ -1,0 +1,68 @@
+@import "palette";
+
+body.rooms {
+	>h1 {
+		text-align: center;
+	}
+	.item-actions {
+		margin-left: 1em;
+	}
+	.rooms-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			@include inline-block;
+			vertical-align: top;
+		}
+		a {
+			display: block;
+			color: $brown;
+			&:hover .room {
+				background-color: darken($yellow, 5%);
+			}
+		}
+		.room {
+			@include inline-block;
+			margin: 1em;
+			width: 28em;
+			min-height: 20em;
+			background: #ffd;
+			overflow: hidden;
+			border: 1px solid transparentize($brown, .8);
+			@include border-radius(.3em);
+			padding: 1em;
+			h1 {
+				text-align: center;
+				border-bottom: 1px solid #330000;
+			}
+			>time {
+				display: block;
+				text-align: right;
+				padding-right: .5em;
+			}
+			>input[type=checkbox] {
+				position: absolute;
+				display: none;
+			}
+			>input[type=checkbox]:checked {
+				display: block;
+			}
+			&:hover>input[type=checkbox], {
+				display: block;
+			}
+			table {
+				width: 49%;
+				float: left;
+				margin: 1em 0;
+			}
+			.operations {
+				border-right: 1px solid $brown;
+			}
+			.participants {
+				float: right;
+				border-left: 1px solid $brown;
+			}
+		}
+	}
+}

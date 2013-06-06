@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>User's profile | Account-it v2</title>
+		<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+		<link rel="stylesheet" href="assets/css/normalize.css">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+	</head>
+	<body class="user-profile">
+		<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<h1>User’s profile</h1>
+		<div class="changables">
+			<h2>Credentials <button class="action edit"><i class="icon-edit"></i></button></h2>
+			<dl class="credentials">
+				<dt>username</dt>
+				<dd><input type="text" value="Paul Kozlovitch" autofocus required></dd>
+				<dt>e-mail</dt>
+				<dd><input type="email" value="Paul.Kozlovitch@gmail.com" required></dd>
+				<dt>password</dt>
+				<dd><input type="password" placeholder="current password"></dd>
+				<dd><input type="password" placeholder="new password"></dd>
+			</dl>
+			<hr>
+			<h2>Social auth</h2>
+			<ul class="social-auth">
+				<li>
+					<i class="icon-facebook provider"></i>
+					<span class="username">Paul Kozlovitch</span>
+					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+				</li>
+				<li>
+					<i class="icon-twitter provider"></i>
+					<span class="username">ThiRaBr_TNK</span>
+					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+				</li>
+				<li>
+					<i class="icon-google-plus provider"></i>
+					<span class="username">Paul Kozlovitch</span>
+					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+				</li>
+			</ul>
+			<button class="add"><i class="icon-plus-sign"></i> Add service</button>
+		</div>
+		<script src="js/app.js"></script>
+		<script src="assets/scripts/jquery-1.9.1.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
