@@ -1,18 +1,23 @@
+@charset "IBM866";
+/* line 5, D:/work/projects/account-it/client/scss/_controls.scss */
 button {
   background: transparent;
   border: 0;
   text-align: left;
 }
+/* line 22, D:/work/projects/account-it/client/scss/_mixins.scss */
 button:hover, button:active {
   color: #990000;
 }
 
+/* line 9, D:/work/projects/account-it/client/scss/_controls.scss */
 .confirm-controls {
   text-align: right;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+/* line 14, D:/work/projects/account-it/client/scss/_controls.scss */
 .confirm-controls li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -21,16 +26,19 @@ button:hover, button:active {
   zoom: 1;
   *display: inline;
 }
+/* line 17, D:/work/projects/account-it/client/scss/_controls.scss */
 .confirm-controls button {
   background: transparent;
   border: 0;
   text-align: left;
   padding: 0;
 }
+/* line 22, D:/work/projects/account-it/client/scss/_mixins.scss */
 .confirm-controls button:hover, .confirm-controls button:active {
   color: #990000;
 }
 
+/* line 23, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions {
   padding: 0;
   margin: 1em 0;
@@ -42,6 +50,7 @@ button:hover, button:active {
   zoom: 1;
   *display: inline;
 }
+/* line 28, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions > li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -50,6 +59,7 @@ button:hover, button:active {
   zoom: 1;
   *display: inline;
 }
+/* line 30, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions > li:first-child button {
   -webkit-border-radius: 0.2em 0 0 0.2em;
   -moz-border-radius: 0.2em 0 0 0.2em;
@@ -58,6 +68,7 @@ button:hover, button:active {
   border-radius: 0.2em 0 0 0.2em;
   border-left-width: 1px;
 }
+/* line 34, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions > li:last-child button {
   -webkit-border-radius: 0 0.2em 0.2em 0;
   -moz-border-radius: 0 0.2em 0.2em 0;
@@ -65,6 +76,7 @@ button:hover, button:active {
   -o-border-radius: 0 0.2em 0.2em 0;
   border-radius: 0 0.2em 0.2em 0;
 }
+/* line 38, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions button {
   background: transparent;
   border: 0;
@@ -80,18 +92,22 @@ button:hover, button:active {
   padding: .3em .8em;
   font-size: 1em;
 }
+/* line 22, D:/work/projects/account-it/client/scss/_mixins.scss */
 .item-actions button:hover, .item-actions button:active {
   color: #990000;
 }
+/* line 47, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions button:hover, .item-actions button:active {
   background: rgba(255, 255, 255, 0.1);
 }
+/* line 50, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions button:active {
   -webkit-box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 3px 5px 0 rgba(0, 0, 0, 0.2);
   padding: .4em .8em .2em .8em;
 }
+/* line 56, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions button:disabled, .item-actions button:disabled:hover, .item-actions button:disabled:active {
   color: #cccccc;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(230, 230, 230, 0.1)), color-stop(100%, rgba(230, 230, 230, 0.15)));
@@ -105,10 +121,12 @@ button:hover, button:active {
   padding: .3em .8em;
   cursor: not-allowed;
 }
+/* line 63, D:/work/projects/account-it/client/scss/_controls.scss */
 .item-actions button i {
   margin: 0;
 }
 
+/* line 4, D:/work/projects/account-it/client/scss/_set.scss */
 * {
   box-sizing: border-box;
 }
@@ -116,6 +134,7 @@ button:hover, button:active {
 /**
 * Vanilla CSS
 */
+/* line 11, D:/work/projects/account-it/client/scss/_set.scss */
 html {
   background: white;
   min-height: 100%;
@@ -125,6 +144,7 @@ html {
 /***************************************************************************************
 * BODY ELEMENTS
 ***************************************************************************************/
+/* line 21, D:/work/projects/account-it/client/scss/_set.scss */
 body {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
@@ -143,6 +163,7 @@ body {
   min-height: 100%;
 }
 
+/* line 33, D:/work/projects/account-it/client/scss/_set.scss */
 hr {
   border: 0;
   border-bottom: 1px solid #330000;
@@ -152,14 +173,17 @@ hr {
 /***************************************************************************************
 * HEADINGS
 ***************************************************************************************/
+/* line 45, D:/work/projects/account-it/client/scss/_set.scss */
 header {
   font-size: 1.2em;
 }
+/* line 47, D:/work/projects/account-it/client/scss/_set.scss */
 header h1 {
   clear: left;
 }
 
 /* All Headings */
+/* line 52, D:/work/projects/account-it/client/scss/_set.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #330000;
   margin: .67em .4em .5em .4em;
@@ -171,18 +195,21 @@ h1, h2, h3, h4, h5, h6 {
 * PARAGRAPHS
 ***************************************************************************************/
 /* First Paragraph */
+/* line 71, D:/work/projects/account-it/client/scss/_set.scss */
 p {
   margin: 1em;
   text-indent: .7em;
 }
 
 /* Seccond Paragraph */
+/* line 77, D:/work/projects/account-it/client/scss/_set.scss */
 abbr {
   border-bottom-style: dotted;
   border-bottom-width: 1px;
 }
 
 /* Blockquote */
+/* line 85, D:/work/projects/account-it/client/scss/_set.scss */
 blockquote {
   margin-left: 2em;
   overflow: hidden;
@@ -192,6 +219,7 @@ blockquote {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
+/* line 93, D:/work/projects/account-it/client/scss/_set.scss */
 blockquote:before {
   content: '“';
   font-size: 8em;
@@ -201,10 +229,12 @@ blockquote:before {
 }
 
 /* Third Paragraph */
+/* line 104, D:/work/projects/account-it/client/scss/_set.scss */
 dfn {
   font-weight: bold;
 }
 
+/* line 110, D:/work/projects/account-it/client/scss/_set.scss */
 strong {
   color: #111426;
 }
@@ -226,6 +256,7 @@ strong {
 /***************************************************************************************
 * TABLES
 ***************************************************************************************/
+/* line 164, D:/work/projects/account-it/client/scss/_set.scss */
 table {
   width: 96%;
   margin: 1em 2%;
@@ -234,16 +265,19 @@ table {
   border-spacing: .5em;
 }
 
+/* line 171, D:/work/projects/account-it/client/scss/_set.scss */
 table .select-all {
   width: 1px;
 }
 
 /* Head */
+/* line 181, D:/work/projects/account-it/client/scss/_set.scss */
 thead .number {
   white-space: nowrap;
   width: 1px;
 }
 
+/* line 185, D:/work/projects/account-it/client/scss/_set.scss */
 th {
   text-align: left;
   font-style: italic;
@@ -251,14 +285,17 @@ th {
 }
 
 /* Body */
+/* line 193, D:/work/projects/account-it/client/scss/_set.scss */
 td {
   border-bottom: 1px dotted rgba(51, 0, 0, 0.6);
 }
 
+/* line 196, D:/work/projects/account-it/client/scss/_set.scss */
 table .expandable.expanded td {
   border: 0;
 }
 
+/* line 199, D:/work/projects/account-it/client/scss/_set.scss */
 table .expanded-content {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -267,20 +304,24 @@ table .expanded-content {
 /***************************************************************************************
 * OTHER
 ***************************************************************************************/
+/* line 3, D:/work/projects/account-it/client/scss/_helpers.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
+/* line 7, D:/work/projects/account-it/client/scss/_helpers.scss */
 .clearfix:after {
   clear: both;
 }
 
+/* line 12, D:/work/projects/account-it/client/scss/_helpers.scss */
 .hidden {
   display: none !important;
 }
 
+/* line 1, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions {
   display: -moz-inline-stack;
   display: inline-block;
@@ -293,6 +334,7 @@ table .expanded-content {
   margin: 0;
   text-align: left;
 }
+/* line 7, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions ul {
   font-size: .8rem;
   margin: -2px 0 0 0;
@@ -309,17 +351,21 @@ table .expanded-content {
   border-radius: 0 0.5em 0.5em 0.5em;
   background: #ffffdd;
 }
+/* line 18, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions ul li {
   border-top: 1px solid #330000;
   padding: .2em 0;
 }
+/* line 21, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions ul li:first-child {
   border-top: 0;
 }
+/* line 27, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions i:hover + ul,
 .actions ul:hover {
   display: block;
 }
+/* line 30, D:/work/projects/account-it/client/scss/_actions.scss */
 .actions .action {
   background: transparent;
   border: 0;
@@ -327,13 +373,16 @@ table .expanded-content {
   color: #330000;
   white-space: nowrap;
 }
+/* line 22, D:/work/projects/account-it/client/scss/_mixins.scss */
 .actions .action:hover, .actions .action:active {
   color: #990000;
 }
+/* line 24, C:/Users/Paul/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .actions .action:hover {
   color: #990000;
 }
 
+/* line 3, D:/work/projects/account-it/client/scss/_room.scss */
 body.room {
   display: -webkit-box;
   display: -moz-box;
@@ -352,6 +401,7 @@ body.room {
   flex-wrap: nowrap;
   width: 100%;
 }
+/* line 20, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .header {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
@@ -363,6 +413,7 @@ body.room .header {
   padding: 1px 0;
   height: auto;
 }
+/* line 30, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .header h1:hover .actions {
   display: -moz-inline-stack;
   display: inline-block;
@@ -371,11 +422,13 @@ body.room .header h1:hover .actions {
   zoom: 1;
   *display: inline;
 }
+/* line 33, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .header .actions {
   display: none;
   position: absolute;
   margin: .3em 0 0 .2em;
 }
+/* line 39, D:/work/projects/account-it/client/scss/_room.scss */
 body.room main {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -398,14 +451,17 @@ body.room main {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
+/* line 62, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .fresh-message {
   font-style: italic;
 }
+/* line 67, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants h1,
 body.room .operations h1 {
   text-align: center;
   font-size: 1.4em;
 }
+/* line 72, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
@@ -416,36 +472,44 @@ body.room .participants {
   padding: 0 1em;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
 }
+/* line 81, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .add {
   background: transparent;
   border: 0;
   text-align: left;
 }
+/* line 22, D:/work/projects/account-it/client/scss/_mixins.scss */
 body.room .participants .add:hover, body.room .participants .add:active {
   color: #990000;
 }
+/* line 83, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .add i {
   margin-right: .2em;
 }
+/* line 87, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants > ul {
   list-style: none;
   margin: 0 0 1em 0;
   padding: 0;
   border-bottom: 1px solid #111426;
 }
+/* line 92, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants > ul > li {
   clear: right;
   white-space: nowrap;
   margin: .5em 0;
 }
+/* line 96, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants > ul > li:hover .actions {
   visibility: visible;
 }
+/* line 101, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .actions {
   visibility: hidden;
   font-size: 1em;
   vertical-align: baseline;
 }
+/* line 106, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .editing {
   padding: .3em;
   margin-left: .8em;
@@ -457,15 +521,19 @@ body.room .participants .editing {
   -o-border-radius: 0.2em;
   border-radius: 0.2em;
 }
+/* line 112, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .editing input[type=text] {
   width: 100%;
 }
+/* line 115, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants .editing .balance {
   display: none;
 }
+/* line 121, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .participants.fresh .fresh-message {
   max-width: 15em;
 }
+/* line 126, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -474,9 +542,11 @@ body.room .operations {
   flex: 1 1 auto;
   padding: 0 2em;
 }
+/* line 133, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .fresh-message {
   margin: 3em 0 5em 0;
 }
+/* line 136, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .add.fresh {
   font-size: 1.5em;
   display: block;
@@ -498,6 +568,7 @@ body.room .operations .add.fresh {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
   color: white;
 }
+/* line 146, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .add.fresh:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2ce45f), color-stop(100%, #19c349));
   background: -webkit-linear-gradient(#2ce45f, #19c349);
@@ -505,17 +576,20 @@ body.room .operations .add.fresh:hover {
   background: -o-linear-gradient(#2ce45f, #19c349);
   background: linear-gradient(#2ce45f, #19c349);
 }
+/* line 149, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .add.fresh:active {
   background: #1cda51;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
+/* line 154, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+/* line 158, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -525,6 +599,7 @@ body.room .operations .operations-list li {
   *display: inline;
   vertical-align: top;
 }
+/* line 162, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation {
   display: -moz-inline-stack;
   display: inline-block;
@@ -545,38 +620,48 @@ body.room .operations .operations-list .operation {
   border-radius: 0.3em;
   padding: 1em;
 }
+/* line 172, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation.editing h1 {
   margin-top: 0;
 }
+/* line 175, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation h1 {
   border-bottom: 1px solid #330000;
 }
+/* line 177, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation h1 input[type=text] {
   margin-bottom: .5em;
 }
+/* line 181, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation .edit {
   position: absolute;
   display: none;
 }
+/* line 185, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation time {
   display: block;
   text-align: right;
   padding-right: .5em;
 }
+/* line 190, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation input[type=date] {
   float: right;
   margin: 0 .5em .5em 0;
 }
+/* line 194, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation input[type=number] {
   width: 4em;
 }
+/* line 197, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation > input[type=checkbox] {
   position: absolute;
   display: none;
 }
+/* line 201, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation > input[type=checkbox]:checked {
   display: block;
 }
+/* line 204, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation:hover .edit {
   display: -moz-inline-stack;
   display: inline-block;
@@ -585,27 +670,34 @@ body.room .operations .operations-list .operation:hover .edit {
   zoom: 1;
   *display: inline;
 }
+/* line 207, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation:hover > input[type=checkbox] {
   display: block;
 }
+/* line 210, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation .confirm-controls li {
   font-size: 1.2em;
 }
+/* line 213, D:/work/projects/account-it/client/scss/_room.scss */
 body.room .operations .operations-list .operation .remove {
   margin-left: -1.5em;
 }
 
+/* line 4, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms > h1 {
   text-align: center;
 }
+/* line 7, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .item-actions {
   margin-left: 1em;
 }
+/* line 10, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+/* line 14, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -615,13 +707,16 @@ body.rooms .rooms-list li {
   *display: inline;
   vertical-align: top;
 }
+/* line 18, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list a {
   display: block;
   color: #330000;
 }
+/* line 21, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list a:hover .room {
   background-color: #ffffc3;
 }
+/* line 25, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room {
   display: -moz-inline-stack;
   display: inline-block;
@@ -642,60 +737,79 @@ body.rooms .rooms-list .room {
   border-radius: 0.3em;
   padding: 1em;
 }
+/* line 35, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room h1 {
   text-align: center;
   border-bottom: 1px solid #330000;
 }
+/* line 39, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room > time {
   display: block;
   text-align: right;
   padding-right: .5em;
 }
+/* line 44, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room > input[type=checkbox] {
   position: absolute;
   display: none;
 }
+/* line 48, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room > input[type=checkbox]:checked {
   display: block;
 }
+/* line 51, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room:hover > input[type=checkbox] {
   display: block;
 }
+/* line 54, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room table {
   width: 49%;
   float: left;
   margin: 1em 0;
 }
+/* line 58, D:/work/projects/account-it/client/scss/_rooms.scss */
+body.rooms .rooms-list .room table td {
+  vertical-align: bottom;
+}
+/* line 62, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room .operations {
   border-right: 1px solid #330000;
 }
+/* line 65, D:/work/projects/account-it/client/scss/_rooms.scss */
 body.rooms .rooms-list .room .participants {
   float: right;
   border-left: 1px solid #330000;
 }
 
+/* line 4, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile > h1 {
   text-align: center;
 }
+/* line 7, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .changables {
   max-width: 980px;
   margin: 0 auto;
 }
+/* line 11, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .credentials {
   overflow: hidden;
 }
+/* line 14, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .credentials dt,
 body.user-profile .credentials dd {
   float: left;
   margin-top: 1em;
 }
+/* line 18, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .credentials dt {
   clear: left;
   width: 10em;
 }
+/* line 23, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .social-auth {
   list-style: none;
 }
+/* line 25, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .social-auth .provider {
   display: -moz-inline-stack;
   display: inline-block;
@@ -704,20 +818,22 @@ body.user-profile .social-auth .provider {
   zoom: 1;
   *display: inline;
   width: 1em;
+  margin-left: .4em;
 }
-body.user-profile .social-auth .username {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
-  min-width: 10em;
-}
+/* line 30, D:/work/projects/account-it/client/scss/_user_profile.scss */
 body.user-profile .social-auth + .add {
   margin-left: 2em;
 }
+/* line 34, D:/work/projects/account-it/client/scss/_user_profile.scss */
+body.user-profile .bookmarks {
+  list-style: none;
+}
+/* line 37, D:/work/projects/account-it/client/scss/_user_profile.scss */
+body.user-profile hr {
+  margin-bottom: 2em;
+}
 
+/* line 14, D:/work/projects/account-it/client/scss/main.scss */
 .balance.negative {
   color: #e40913;
 }

@@ -18,7 +18,7 @@
 		<![endif]-->
 		<h1>User’s profile</h1>
 		<div class="changables">
-			<h2>Credentials <button class="action edit"><i class="icon-edit"></i></button></h2>
+			<h2>Credentials <button class="action edit" title="Edit credentials"><i class="icon-edit"></i></button></h2>
 			<dl class="credentials">
 				<dt>username</dt>
 				<dd><input type="text" value="Paul Kozlovitch" autofocus required></dd>
@@ -32,22 +32,38 @@
 			<h2>Social auth</h2>
 			<ul class="social-auth">
 				<li>
+					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+					Paul Kozlovitch
 					<i class="icon-facebook provider"></i>
-					<span class="username">Paul Kozlovitch</span>
-					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
 				</li>
 				<li>
+					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+					ThiRaBr_TNK
 					<i class="icon-twitter provider"></i>
-					<span class="username">ThiRaBr_TNK</span>
-					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
 				</li>
 				<li>
-					<i class="icon-google-plus provider"></i>
-					<span class="username">Paul Kozlovitch</span>
 					<button class="action remove" title="Disconnect auth provider"><i class="icon-trash"></i></button>
+					Paul Kozlovitch
+					<i class="icon-google-plus provider"></i>
 				</li>
 			</ul>
 			<button class="add"><i class="icon-plus-sign"></i> Add service</button>
+			<hr>
+			<h2>Bookmarks</h2>
+			<ul class="bookmarks">
+				<li>
+					<button class="action remove" title="Remove room from bookmarks"><i class="icon-trash"></i></button>
+					Bukovel
+				</li>
+				<li>
+					<button class="action remove" title="Remove room from bookmarks"><i class="icon-trash"></i></button>
+					Summer Eurotrip 2011
+				</li>
+				<li>
+					<button class="action remove" title="Remove room from bookmarks"><i class="icon-trash"></i></button>
+					Some other room name
+				</li>
+			</ul>
 		</div>
 		<script src="js/app.js"></script>
 		<script src="assets/scripts/jquery-1.9.1.min.js"></script>

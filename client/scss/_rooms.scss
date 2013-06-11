@@ -55,6 +55,9 @@ body.rooms {
 				width: 49%;
 				float: left;
 				margin: 1em 0;
+				td {
+					vertical-align: bottom;
+				}
 			}
 			.operations {
 				border-right: 1px solid $brown;

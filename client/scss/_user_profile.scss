@@ -25,13 +25,16 @@ body.user-profile {
 		.provider {
 			@include inline-block;
 			width: 1em;
-		}
-		.username {
-			@include inline-block;
-			min-width: 10em;
+			margin-left: .4em;
 		}
 		+.add {
 			margin-left: 2em;
 		}
+	}
+	.bookmarks {
+		list-style: none;
+	}
+	hr {
+		margin-bottom: 2em;
 	}
 }
